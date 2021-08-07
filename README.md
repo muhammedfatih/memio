@@ -10,7 +10,7 @@ Memio is a library, it allows you to describe PHP code by building "Model" class
 
 Install using [Composer](https://getcomposer.org/download):
 
-    composer require memio/memio:^1.0
+    composer require memio/memio
 
 ## Full example
 
@@ -23,7 +23,7 @@ require __DIR__.'/vendor/autoload.php';
 
 use Memio\Memio\Config\Build;
 use Memio\Model\File;
-use Memio\Model\Object;
+use Memio\Model\Objekt;
 use Memio\Model\Property;
 use Memio\Model\Method;
 use Memio\Model\Argument;
@@ -31,7 +31,7 @@ use Memio\Model\Argument;
 // Describe the code you want to generate using "Models"
 $file = File::make('src/Vendor/Project/MyService.php')
     ->setStructure(
-        Object::make('Vendor\Project\MyService')
+        Objekt::make('Vendor\Project\MyService')
             ->addProperty(new Property('createdAt'))
             ->addProperty(new Property('filename'))
             ->addMethod(
